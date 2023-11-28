@@ -229,7 +229,41 @@ describe("Quiz", () => {
     });
   });
 
-  describe("filterQuestionsByDifficulty() method", () => {
+  // ****************************************************************************************************
+  // DAY 2
+  //
+  // The 1st test is already written for you -  checking if the 'filter()' array method is used.
+  //
+  // The test block below is currently skipped ('xdescribe').
+  // Once you start working on the tests, change the 'xdescribe' to 'describe' to enable the tests.
+  // ****************************************************************************************************
+
+  xdescribe("filterQuestionsByDifficulty() method", () => {   
+    it("should use the 'filter()' array method on the 'questions' array", () => {
+      // Instantiate a new Quiz object
+      const quiz = new Quiz([], "test", 60);
+      // Set up a spy on the 'filter()' array method to track calls to it
+      const filterSpy = spyOn(quiz.questions, "filter");
+
+      // Call the 'filterQuestionsByDifficulty()' method
+      quiz.filterQuestionsByDifficulty(1);
+
+      // Check if the 'filter()' array method was called on the 'questions' array
+      expect(filterSpy).toHaveBeenCalled();
+      // Check that the 'filter()' array method was called only once
+      expect(filterSpy).toHaveBeenCalledTimes(1);
+      // Check that the 'filter()' array method was called correctly, with a function as its argument
+      expect(filterSpy).toHaveBeenCalledWith(jasmine.any(Function));
+    });    
+
+
+    // ****************************************************************************************************
+    // DAY 2: 'filterQuestionsByDifficulty()' method
+    //      
+    // Below are 4 tests that you need to write for the 'filterQuestionsByDifficulty()' method.
+    // ****************************************************************************************************
+
+
     it("should be defined", () => {
       // YOUR CODE HERE:
       //
@@ -245,7 +279,6 @@ describe("Quiz", () => {
       // 1. Instantiate a new Quiz object
 
       // 2. Check if the .filterQuestionsByDifficulty is a function
-
     });
 
     it("should receive 1 argument (difficulty)", () => {
@@ -334,7 +367,42 @@ describe("Quiz", () => {
     });
   });
 
-  describe("averageDifficulty() method", () => {
+
+  // ****************************************************************************************************
+  // DAY 2
+  //
+  // The 1st test is already written for you -  checking if the 'reduce()' array method is used.
+  //
+  // The test block below is currently skipped ('xdescribe').
+  // Once you start working on the tests, change the 'xdescribe' to 'describe' to enable the tests.
+  // ****************************************************************************************************
+
+  xdescribe("averageDifficulty() method", () => {
+    it("should use the 'reduce()' array method on the 'questions' array", () => {
+      // Instantiate a new Quiz object
+      const quiz = new Quiz([], "test", 60);
+      // Set up a spy on the 'reduce()' array method to track calls to it
+      const reduceSpy = spyOn(quiz.questions, "reduce");
+
+      // Call the 'averageDifficulty()' method
+      quiz.averageDifficulty();
+
+      // Check if the 'reduce()' array method was called on the 'questions' array
+      expect(reduceSpy).toHaveBeenCalled();
+      // Check that the 'reduce()' array method was called only once
+      expect(reduceSpy).toHaveBeenCalledTimes(1);
+      // Check that the 'reduce()' array method was called correctly, with a function as its 1st argument and optional 2nd argument
+      expect(reduceSpy.calls.allArgs()[0][0]).toEqual(jasmine.any(Function));
+    });
+
+
+    // ****************************************************************************************************
+    // DAY 2: 'averageDifficulty()' method
+    //      
+    // Below are 4 tests that you need to write for the 'averageDifficulty()' method.
+    // ****************************************************************************************************
+      
+
     it("should be defined", () => {
       // YOUR CODE HERE:
       //
