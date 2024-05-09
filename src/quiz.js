@@ -26,7 +26,7 @@ class Quiz {
   }
 
   checkAnswer(answer) {
-    if (answer === answer) {
+    if (this.questions[this.currentQuestionIndex].answer === answer) {
       this.correctAnswers++;
     }
   }
